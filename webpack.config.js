@@ -1,13 +1,24 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+let mode = 'development';
+if (process.env.NODE_ENV === 'production') {
+  mode = 'production';
+}
 
 module.exports = {
     entry: './src/index.tsx',
-    mode: 'development',
+    mode,
     module: {
       rules: [
         {
-          test: /\.tsx?$/,
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            loader: "babel-loader",
+            options: { presets: ["@babel/env"] }
+        },
+        {
+          test: /\.(tsx|ts)?$/,
           use: 'ts-loader',
           exclude: /node_modules/,
         },
@@ -18,6 +29,7 @@ module.exports = {
           directory: path.join(__dirname, 'public'),
         },
         compress: true,
+        hot: true,
         port: 3000,
     },
     plugins: [
@@ -31,6 +43,7 @@ module.exports = {
     },
     output: {
       filename: 'bundle.js',
+      clean: true,
       path: path.resolve(__dirname, 'dist'),
     },
 }
