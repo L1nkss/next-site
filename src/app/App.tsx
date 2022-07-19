@@ -1,7 +1,12 @@
 import { FC } from "react"
 
 const App: FC = () => {
-  return <div>Hello</div>
+  return (
+    <div>
+      {" "}
+      <h1 className='text-3xl font-bold underline'>Hello world!</h1>
+    </div>
+  )
 }
 
 export { App }
