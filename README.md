@@ -1,1 +1,1 @@
-# React + Webpack template
+# React Typescript Starter
