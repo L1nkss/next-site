@@ -39,12 +39,15 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Сайт портфолио",
+      title: "React Typescript Starter",
       template: "./public/index.html",
     }),
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+    alias: {
+      "@app": path.resolve(__dirname, "src/app"),
+    },
   },
   output: {
     filename: "bundle.js",
