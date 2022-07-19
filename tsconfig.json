@@ -3,7 +3,11 @@
   "compilerOptions": {
     "outDir": "./dist",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -16,7 +20,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "incremental": true
   },
-  "exclude": ["./dist/**/*"]
+  "exclude": [
+    "./dist/**/*"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
