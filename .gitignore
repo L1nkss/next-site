@@ -2,3 +2,4 @@ dist
 node_modules
 .code
 package-lock.json
+.idea
